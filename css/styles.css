@@ -1,93 +1,13 @@
-/* Catppuccin Mocha Theme */
 :root {
     --base: #1e1e2e;
     --mantle: #181825;
     --crust: #11111b;
     --text: #cdd6f4;
-    --subtext0: #a6adc8;
-    --subtext1: #bac2de;
-    --surface0: #313244;
-    --surface1: #45475a;
-    --surface2: #585b70;
-    --overlay0: #6c7086;
-    --overlay1: #7f849c;
-    --overlay2: #9399b2;
-    --blue: #cba6f7;
-    /* Mauve as accent */
-    --lavender: #b4befe;
-    --sapphire: #74c7ec;
-    --sky: #89dceb;
-    --teal: #94e2d5;
-    --green: #a6e3a1;
-    --yellow: #f9e2af;
-    --peach: #fab387;
-    --maroon: #eba0ac;
-    --red: #f38ba8;
-    --mauve: #cba6f7;
-    --pink: #f5c2e7;
-    --flamingo: #f2cdcd;
-    --rosewater: #f5e0dc;
-}
-
-.popup-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
-    display: none;
-    /* Hidden by default */
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
-}
-
-.popup-content {
-    background-color: var(--mantle);
-    padding: 30px;
-    border-radius: 16px;
-    max-width: 600px;
-    width: 90%;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
-    border: 1px solid var(--surface0);
-    position: relative;
-    color: var(--text);
-}
-
-.close-btn {
-    position: absolute;
-    top: 10px;
-    right: 15px;
-    font-size: 30px;
-    cursor: pointer;
-    color: var(--text);
-    transition: color 0.3s ease;
-}
-
-.close-btn:hover {
-    color: var(--red);
-}
-
-.popup-content h1 {
-    color: var(--blue);
-    margin-bottom: 15px;
-    font-size: 2em;
-}
-
-.popup-content p {
-    margin-bottom: 15px;
-    line-height: 1.6;
-}
-
-.popup-content a {
-    color: var(--blue);
-    text-decoration: none;
-}
-
-.popup-content a:hover {
-    color: var(--lavender);
-    text-decoration: underline;
+    --muted: #a6adc8;
+    --surface: #313244;
+    --accent: #cba6f7;
+    --accent-2: #b4befe;
+    --danger: #f38ba8;
 }
 
 * {
@@ -95,63 +15,50 @@
 }
 
 body {
-    font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    line-height: 1.7;
+    font-family: Inter, 'Segoe UI', system-ui, Arial, sans-serif;
+    line-height: 1.6;
     margin: 0;
-    padding: 0;
-    background: linear-gradient(135deg, var(--base) 0%, var(--mantle) 100%);
-    color: var(--text);
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    background: linear-gradient(135deg, var(--base), var(--mantle));
+    color: var(--text);
 }
+
+    /* prevent scrolling past the document edges (stop overscroll/bounce) */
+    html,
+    body {
+        overscroll-behavior-y: none;
+    }
 
 header {
-    background: linear-gradient(90deg, var(--blue) 0%, var(--lavender) 100%);
+    background: linear-gradient(90deg, var(--accent), var(--accent-2));
     color: var(--base);
-    padding: 30px 20px;
+    padding: 28px 18px;
     text-align: center;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
-    position: relative;
-    overflow: hidden;
-}
-
-header::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="2" fill="rgba(255,255,255,0.1)"/></svg>') repeat;
-    opacity: 0.1;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
 }
 
 header h1 {
     margin: 0;
-    font-size: 3em;
+    font-size: 2.6rem;
     font-weight: 700;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-    position: relative;
-    z-index: 1;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
 }
 
 header p {
-    margin: 10px 0 0;
-    font-size: 1.2em;
-    opacity: 0.9;
-    position: relative;
-    z-index: 1;
+    margin: 0.5em 0 0;
+    font-size: 1.05rem;
+    opacity: 0.95;
 }
 
 nav {
-    background-color: var(--mantle);
-    padding: 15px 20px;
-    border-bottom: 2px solid var(--surface0);
+    background: var(--mantle);
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--surface);
     position: sticky;
     top: 0;
-    z-index: 100;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    z-index: 90;
 }
 
 nav ul {
@@ -161,88 +68,154 @@ nav ul {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 20px;
-}
-
-nav ul li {
-    display: inline;
+    gap: 16px;
 }
 
 nav a {
-    color: var(--blue);
+    color: var(--accent);
     text-decoration: none;
     font-weight: 600;
-    font-size: 1.1em;
-    padding: 10px 15px;
+    font-size: 1rem;
+    padding: 8px 12px;
     border-radius: 8px;
-    transition: all 0.3s ease;
-    position: relative;
+    transition: all 0.18s;
 }
 
 nav a:hover {
-    color: var(--lavender);
-    background-color: var(--surface0);
+    color: var(--accent-2);
+    background: var(--surface);
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(137, 180, 250, 0.3);
 }
 
 main {
     flex: 1;
-    padding: 40px 20px;
+    padding: 36px 18px;
 }
 
 .container {
-    max-width: 1200px;
+    max-width: 1100px;
     margin: 0 auto;
     display: grid;
     grid-template-columns: 1fr;
-    gap: 30px;
+    gap: 26px;
+}
+
+/* Profile page layout: floated infobox (sidebar) + normal content flow.
+   The infobox will float to the right; content will flow beside it and
+   then continue underneath once the infobox ends. */
+.profile-layout {
+    display: block;
+    /* contain floats */
+    overflow: auto;
+}
+
+.infobox {
+    background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+    border: 1px solid rgba(255,255,255,0.04);
+    padding: 14px;
+    border-radius: 8px;
+    width: 320px;
+    float: right; /* allow text to flow around then under */
+    margin-left: 22px;
+}
+
+.infobox-image {
+    display: flex;
+    justify-content: center;
+    padding: 6px 0 10px 0;
+}
+
+.profile-pic {
+    width: 100%;
+    max-width: 240px;
+    height: auto;
+    border-radius: 6px;
+    border: 1px solid rgba(0,0,0,0.25);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.45);
+}
+
+.infobox-title {
+    margin: 8px 0;
+    font-size: 1rem;
+    color: var(--accent-2);
+    text-align: center;
+}
+
+.infobox-row {
+    display: flex;
+    gap: 8px;
+    padding: 6px 4px;
+    border-top: 1px dashed rgba(255,255,255,0.02);
+    align-items: center;
+}
+
+.infobox-key {
+    width: 40%;
+    color: var(--muted);
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+.infobox-value {
+    width: 60%;
+    color: var(--text);
+    font-size: 0.95rem;
+}
+
+.flag {
+    height: 14px;
+    vertical-align: middle;
+    margin-right: 8px;
+}
+
+.infobox-sub {
+    margin-top: 10px;
+    margin-bottom: 6px;
+    color: var(--accent);
+    font-size: 0.95rem;
 }
 
 .content {
-    background-color: var(--mantle);
-    border-radius: 16px;
-    padding: 30px;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
-    border: 1px solid var(--surface0);
+    background: var(--mantle);
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.38);
+    border: 1px solid var(--surface);
 }
 
 .content h1 {
-    color: var(--blue);
-    font-size: 2.5em;
-    margin-bottom: 20px;
+    color: var(--accent);
+    font-size: 1.9rem;
+    margin-bottom: 14px;
     text-align: center;
-    border-bottom: 3px solid var(--blue);
-    padding-bottom: 10px;
+    border-bottom: 3px solid var(--accent);
+    padding-bottom: 0.6em;
 }
 
 .content h2 {
-    color: var(--lavender);
-    font-size: 1.8em;
-    margin-top: 30px;
-    margin-bottom: 15px;
-    padding-left: 0;
-}
-
-/* Normalize spacing inside content cards: rely on the card's padding
-   rather than varying child element margins. This keeps top and bottom
-   spacing visually consistent. */
-.content> :first-child {
-    margin-top: 0;
-}
-
-.content> :last-child {
-    margin-bottom: 0;
+    color: var(--accent-2);
+    font-size: 1.25rem;
+    margin: 0.8em 0;
 }
 
 .content p {
     margin: 0 0 1em 0;
-    /* no top margin, small bottom margin */
 }
 
-.content h2 {
-    margin: 0 0 0.75em 0;
-    /* reduce h2 top margin so spacing matches */
+/* quote-row reserves space on the right (infobox width) so the quote can be
+   centered between the left edge and the infobox. On small screens the
+   reservation is removed. */
+.quote-row {
+    margin-right: 342px; /* infobox width (320) + margin-left (22) */
+    text-align: center;
+}
+
+.quote-row .quote {
+    display: inline-block;
+    margin: 0 0 1em 0;
+    padding: 8px 12px;
+    background: transparent;
+    color: var(--muted);
 }
 
 .content ul {
@@ -251,74 +224,87 @@ main {
     margin: 0;
 }
 
-/* Prevent list items inside content cards from adding extra bottom space
-   so the card's internal top and bottom spacing stays balanced. */
-.content ul li:first-child {
-    margin-top: 0;
-}
-
-.content ul li:last-child {
-    margin-bottom: 0;
-}
-
 .content li {
-    background-color: var(--surface0);
-    margin-bottom: 12px;
-    padding: 15px 20px;
+    background: var(--surface);
+    margin-bottom: 10px;
+    padding: 12px 16px;
     border-radius: 8px;
-    transition: all 0.3s ease;
     display: flex;
     align-items: center;
     gap: 12px;
-    /* space between label and link */
     flex-wrap: wrap;
-    /* allow long links to wrap to next line */
+    transition: all 0.22s;
 }
 
 .content li:hover {
-    background-color: var(--surface1);
-    transform: translateX(5px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    background: #45475a;
+    transform: translateX(4px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.32);
+}
+
+/* Utility class for lists that should be plain text (no card styling) */
+.plain-list {
+    list-style: disc outside;
+    padding-left: 1.25rem; /* ensure bullets align nicely */
+    margin: 0 0 1em 0;
+}
+
+.plain-list li {
+    background: transparent;
+    margin: 0 0 0.5em 0;
+    padding: 0;
+    border-radius: 0;
+    display: list-item;
+    align-items: initial;
+    gap: 0;
+    transform: none;
+    box-shadow: none;
+    transition: none; /* disable card transition */
+    cursor: default;
+}
+
+.plain-list li:hover {
+    background: transparent; /* ensure no hover background */
+    transform: none;         /* disable hover translate */
+    box-shadow: none;       /* disable hover shadow */
 }
 
 .content a {
-    color: var(--blue);
+    color: var(--accent);
     text-decoration: none;
     font-weight: 500;
-    transition: color 0.3s ease;
 }
 
 .content a:hover {
-    color: var(--lavender);
+    color: var(--accent-2);
 }
 
 footer {
-    background-color: var(--crust);
-    color: var(--subtext0);
+    background: var(--crust);
+    color: var(--muted);
     text-align: center;
-    padding: 20px;
-    border-top: 2px solid var(--surface0);
-    margin-top: 40px;
+    padding: 18px;
+    border-top: 1px solid var(--surface);
+    margin-top: 36px;
 }
 
 footer p {
     margin: 0;
-    font-size: 0.9em;
+    font-size: 0.9rem;
 }
 
 footer a {
-    color: var(--blue);
+    color: var(--accent);
     text-decoration: none;
 }
 
 footer a:hover {
-    color: var(--lavender);
+    color: var(--accent-2);
 }
 
-/* Responsive Design */
 @media (max-width: 768px) {
     header h1 {
-        font-size: 2.5em;
+        font-size: 2rem;
     }
 
     nav ul {
@@ -332,14 +318,38 @@ footer a:hover {
     }
 
     .content {
-        padding: 20px;
+        padding: 18px;
     }
 
     .content h1 {
-        font-size: 2em;
+        font-size: 1.4rem;
     }
 
     .content h2 {
-        font-size: 1.5em;
+        font-size: 1rem;
     }
+
+        .profile-layout {
+                /* keep normal document flow on small screens */
+                display: block;
+                gap: 14px;
+            }
+
+            .infobox {
+                width: 100%;
+                float: none; /* cancel float on small screens */
+                margin-left: 0;
+                flex: 0 0 auto;
+                order: -1;
+            }
+
+            .quote-row {
+                margin-right: 0;
+                text-align: center;
+            }
+}
+
+/* profile-body: main article content that flows around the floated infobox */
+.profile-body {
+    min-width: 0; /* allow content to shrink properly */
 }
