@@ -110,6 +110,7 @@ main {
 
 .infobox-image {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     padding: 4px 0 8px 0;
 }
@@ -118,6 +119,13 @@ main {
     width: 288px;
     height: auto;
     border-radius: 6px;
+}
+
+.infobox-image p {
+    text-align: center;
+    font-size: 0.9rem;
+    color: var(--muted);
+    margin: 4px 0;
 }
 
 .infobox-title {
