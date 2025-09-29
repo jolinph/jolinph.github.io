@@ -178,7 +178,7 @@ main {
 }
 
 .content h2 {
-    color: var(--accent-2);
+    color: var(--accent);
     font-size: 1.25rem;
     margin: 0.5em 0;
 }
@@ -246,13 +246,13 @@ main {
 }
 
 .content a {
-    color: var(--accent);
+    color: var(--accent-2);
     text-decoration: none;
     font-weight: 500;
 }
 
 .content a:hover {
-    color: var(--accent-2);
+    color: var(--accent);
 }
 
 footer {
