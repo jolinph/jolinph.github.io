@@ -1,157 +1,61 @@
-/* Catppuccin Mocha Theme */
 :root {
     --base: #1e1e2e;
     --mantle: #181825;
     --crust: #11111b;
     --text: #cdd6f4;
-    --subtext0: #a6adc8;
-    --subtext1: #bac2de;
-    --surface0: #313244;
-    --surface1: #45475a;
-    --surface2: #585b70;
-    --overlay0: #6c7086;
-    --overlay1: #7f849c;
-    --overlay2: #9399b2;
-    --blue: #cba6f7;
-    /* Mauve as accent */
-    --lavender: #b4befe;
-    --sapphire: #74c7ec;
-    --sky: #89dceb;
-    --teal: #94e2d5;
-    --green: #a6e3a1;
-    --yellow: #f9e2af;
-    --peach: #fab387;
-    --maroon: #eba0ac;
-    --red: #f38ba8;
-    --mauve: #cba6f7;
-    --pink: #f5c2e7;
-    --flamingo: #f2cdcd;
-    --rosewater: #f5e0dc;
-}
-
-.popup-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
-    display: none;
-    /* Hidden by default */
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
-}
-
-.popup-content {
-    background-color: var(--mantle);
-    padding: 30px;
-    border-radius: 16px;
-    max-width: 600px;
-    width: 90%;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
-    border: 1px solid var(--surface0);
-    position: relative;
-    color: var(--text);
-}
-
-.close-btn {
-    position: absolute;
-    top: 10px;
-    right: 15px;
-    font-size: 30px;
-    cursor: pointer;
-    color: var(--text);
-    transition: color 0.3s ease;
-}
-
-.close-btn:hover {
-    color: var(--red);
-}
-
-.popup-content h1 {
-    color: var(--blue);
-    margin-bottom: 15px;
-    font-size: 2em;
-}
-
-.popup-content p {
-    margin-bottom: 15px;
-    line-height: 1.6;
-}
-
-.popup-content a {
-    color: var(--blue);
-    text-decoration: none;
-}
-
-.popup-content a:hover {
-    color: var(--lavender);
-    text-decoration: underline;
+    --muted: #a6adc8;
+    --surface: #313244;
+    --surface-hover: #45475a;
+    --accent: #cba6f7;
+    --accent-2: #b4befe;
+    --danger: #f38ba8;
 }
 
 * {
     box-sizing: border-box;
 }
 
-body {
-    font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    line-height: 1.7;
-    margin: 0;
-    padding: 0;
-    background: linear-gradient(135deg, var(--base) 0%, var(--mantle) 100%);
-    color: var(--text);
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-}
-
-header {
-    background: linear-gradient(90deg, var(--blue) 0%, var(--lavender) 100%);
-    color: var(--base);
-    padding: 30px 20px;
-    text-align: center;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
-    position: relative;
+html {
+    height: 100%;
     overflow: hidden;
 }
 
-header::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="2" fill="rgba(255,255,255,0.1)"/></svg>') repeat;
-    opacity: 0.1;
+body {
+    font-family: Inter, system-ui, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    height: 100%;
+    overflow: auto;
+    overscroll-behavior: none;
+    display: flex;
+    flex-direction: column;
+    background: var(--base);
+    color: var(--text);
+}
+
+header {
+    background: var(--accent);
+    color: var(--base);
+    padding: 24px 16px;
+    text-align: center;
 }
 
 header h1 {
     margin: 0;
-    font-size: 3em;
+    font-size: 2.6rem;
     font-weight: 700;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-    position: relative;
-    z-index: 1;
 }
 
 header p {
-    margin: 10px 0 0;
-    font-size: 1.2em;
-    opacity: 0.9;
-    position: relative;
-    z-index: 1;
+    margin: 0.4em 0 0;
+    font-size: 1.05rem;
 }
 
 nav {
-    background-color: var(--mantle);
-    padding: 15px 20px;
-    border-bottom: 2px solid var(--surface0);
+    background: var(--mantle);
+    padding: 12px 16px;
     position: sticky;
     top: 0;
-    z-index: 100;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 }
 
 nav ul {
@@ -161,88 +65,142 @@ nav ul {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 20px;
-}
-
-nav ul li {
-    display: inline;
+    gap: 12px;
 }
 
 nav a {
-    color: var(--blue);
+    color: var(--accent);
     text-decoration: none;
     font-weight: 600;
-    font-size: 1.1em;
-    padding: 10px 15px;
-    border-radius: 8px;
-    transition: all 0.3s ease;
-    position: relative;
+    font-size: 1rem;
+    padding: 6px 10px;
+    border-radius: 6px;
 }
 
 nav a:hover {
-    color: var(--lavender);
-    background-color: var(--surface0);
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(137, 180, 250, 0.3);
+    color: var(--accent-2);
+    background: var(--surface);
 }
 
 main {
     flex: 1;
-    padding: 40px 20px;
+    padding: 24px 16px;
 }
 
 .container {
-    max-width: 1200px;
+    max-width: 1100px;
     margin: 0 auto;
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 30px;
+    gap: 20px;
+}
+
+.profile-layout {
+    display: block;
+    
+    overflow: auto;
+}
+
+.infobox {
+    background: var(--surface);
+    padding: 12px 16px;
+    border-radius: 6px;
+    width: 320px;
+    float: right; 
+    margin-left: 18px;
+}
+
+.infobox-image {
+    display: flex;
+    justify-content: center;
+    padding: 4px 0 8px 0;
+}
+
+.profile-pic {
+    width: 288px;
+    height: auto;
+    border-radius: 6px;
+}
+
+.infobox-title {
+    margin: 6px 0;
+    font-size: 1rem;
+    color: var(--accent-2);
+    text-align: center;
+}
+
+.infobox-row {
+    display: flex;
+    gap: 6px;
+    padding: 4px 2px;
+    align-items: center;
+    border-bottom: 1px solid var(--muted);
+}
+
+.infobox-key {
+    width: 40%;
+    color: var(--muted);
+    font-weight: 600;
+    font-size: 0.95rem;
+    text-align: center;
+    border-right: 1px solid var(--muted);
+}
+
+.infobox-value {
+    width: 60%;
+    color: var(--text);
+    font-size: 0.95rem;
+}
+
+.flag {
+    height: 14px;
+    margin-right: 8px;
+}
+
+.infobox-sub {
+    margin-top: 8px;
+    margin-bottom: 4px;
+    color: var(--accent);
+    font-size: 0.95rem;
 }
 
 .content {
-    background-color: var(--mantle);
-    border-radius: 16px;
-    padding: 30px;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
-    border: 1px solid var(--surface0);
+    background: var(--mantle);
+    border-radius: 8px;
+    padding: 16px;
 }
 
 .content h1 {
-    color: var(--blue);
-    font-size: 2.5em;
-    margin-bottom: 20px;
+    color: var(--accent);
+    font-size: 1.9rem;
+    margin-bottom: 10px;
     text-align: center;
-    border-bottom: 3px solid var(--blue);
-    padding-bottom: 10px;
+    border-bottom: 2px solid var(--accent);
+    padding-bottom: 0.4em;
 }
 
 .content h2 {
-    color: var(--lavender);
-    font-size: 1.8em;
-    margin-top: 30px;
-    margin-bottom: 15px;
-    padding-left: 0;
+    color: var(--accent-2);
+    font-size: 1.25rem;
+    margin: 0.5em 0;
 }
 
-/* Normalize spacing inside content cards: rely on the card's padding
-   rather than varying child element margins. This keeps top and bottom
-   spacing visually consistent. */
-.content> :first-child {
-    margin-top: 0;
-}
-
-.content> :last-child {
-    margin-bottom: 0;
+.content h4 {
+    color: var(--accent);
 }
 
 .content p {
-    margin: 0 0 1em 0;
-    /* no top margin, small bottom margin */
+    margin: 0 0 0.8em 0;
 }
 
-.content h2 {
-    margin: 0 0 0.75em 0;
-    /* reduce h2 top margin so spacing matches */
+.quote-row {
+    margin-right: 338px; 
+    text-align: center;
+}
+
+.quote-row .centered {
+    display: inline-block;
+    margin: 0 0 0.8em 0;
+    padding: 6px 10px;
+    color: var(--muted);
 }
 
 .content ul {
@@ -251,79 +209,137 @@ main {
     margin: 0;
 }
 
-/* Prevent list items inside content cards from adding extra bottom space
-   so the card's internal top and bottom spacing stays balanced. */
-.content ul li:first-child {
-    margin-top: 0;
-}
-
-.content ul li:last-child {
-    margin-bottom: 0;
-}
-
 .content li {
-    background-color: var(--surface0);
-    margin-bottom: 12px;
-    padding: 15px 20px;
-    border-radius: 8px;
-    transition: all 0.3s ease;
+    background: var(--surface);
+    margin-bottom: 6px;
+    padding: 8px 12px;
+    border-radius: 4px;
     display: flex;
     align-items: center;
-    gap: 12px;
-    /* space between label and link */
+    gap: 8px;
     flex-wrap: wrap;
-    /* allow long links to wrap to next line */
 }
 
 .content li:hover {
-    background-color: var(--surface1);
-    transform: translateX(5px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    background: var(--surface-hover);
+}
+
+
+.plain-list {
+    list-style: disc outside;
+    padding-left: 1rem;
+    margin: 0 0 1em 0;
+}
+
+.plain-list li {
+    background: transparent;
+    margin: 0 0 0.3em 0;
+    padding: 0;
+    border-radius: 0;
+    display: list-item;
+    align-items: initial;
+    gap: 0;
+}
+
+.plain-list li:hover {
+    background: transparent;
 }
 
 .content a {
-    color: var(--blue);
+    color: var(--accent);
     text-decoration: none;
     font-weight: 500;
-    transition: color 0.3s ease;
 }
 
 .content a:hover {
-    color: var(--lavender);
+    color: var(--accent-2);
 }
 
 footer {
-    background-color: var(--crust);
-    color: var(--subtext0);
+    background: var(--crust);
+    color: var(--muted);
     text-align: center;
-    padding: 20px;
-    border-top: 2px solid var(--surface0);
-    margin-top: 40px;
+    padding: 16px;
+    margin-top: 24px;
 }
 
 footer p {
     margin: 0;
-    font-size: 0.9em;
+    font-size: 0.9rem;
 }
 
 footer a {
-    color: var(--blue);
+    color: var(--accent);
     text-decoration: none;
 }
 
 footer a:hover {
-    color: var(--lavender);
+    color: var(--accent-2);
 }
 
-/* Responsive Design */
+.popup-overlay {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 1000;
+}
+
+.popup-content {
+  background: var(--mantle);
+  color: var(--text);
+  padding: 16px;
+  border-radius: 8px;
+  max-width: 600px;
+  width: 90%;
+  border: 1px solid var(--surface);
+  position: relative;
+}
+
+.close-btn {
+  position: absolute;
+  top: 4px;
+  right: 8px;
+  font-size: 20px;
+  cursor: pointer;
+  color: var(--text);
+}
+
+.close-btn:hover {
+  color: var(--danger);
+}
+
+.popup-content h1 {
+  color: var(--accent);
+  margin: 0.2em 0 0.4em;
+  font-size: 1.6rem;
+}
+
+.popup-content p {
+  margin: 0 0 0.6em 0;
+  line-height: 1.5;
+}
+
+.popup-content a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.popup-content a:hover {
+  color: var(--accent-2);
+  text-decoration: underline;
+}
+
 @media (max-width: 768px) {
     header h1 {
-        font-size: 2.5em;
+        font-size: 2rem;
     }
 
     nav ul {
         flex-direction: column;
-        gap: 10px;
+        gap: 8px;
     }
 
     nav a {
@@ -332,14 +348,26 @@ footer a:hover {
     }
 
     .content {
-        padding: 20px;
+        padding: 16px;
     }
 
     .content h1 {
-        font-size: 2em;
+        font-size: 1.4rem;
     }
 
     .content h2 {
-        font-size: 1.5em;
+        font-size: 1rem;
+    }
+
+    .infobox {
+        width: 100%;
+        float: none; 
+        margin-left: 0;
+    }
+
+    .quote-row {
+        margin-right: 0;
+        text-align: center;
     }
 }
+
