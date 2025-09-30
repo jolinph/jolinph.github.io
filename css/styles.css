@@ -105,8 +105,8 @@ main {
 
 .infobox {
     background: var(--surface);
-    padding: var(--padding);
-    border-radius: var(--border-radius);
+    padding: 12px 16px;
+    border-radius: 6px;
     width: 320px;
     float: right; 
     margin-left: 18px;
@@ -116,13 +116,13 @@ main {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: var(--padding);
+    padding: 4px 0 8px 0;
 }
 
 .profile-pic {
     width: 288px;
     height: auto;
-    border-radius: var(--border-radius);
+    border-radius: 6px;
 }
 
 .infobox-image p {
@@ -141,8 +141,8 @@ main {
 
 .infobox-row {
     display: flex;
-    gap: var(--gap);
-    padding: var(--padding);
+    gap: 6px;
+    padding: 4px 2px;
     align-items: center;
     border-bottom: 1px solid var(--muted);
 }
