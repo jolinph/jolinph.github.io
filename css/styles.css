@@ -9,6 +9,10 @@
     --accent: #cba6f7;
     --accent-2: #b4befe;
     --danger: #f38ba8;
+    --padding: 16px;
+    --border-radius: 6px;
+    --gap: 8px;
+    --content-heading-margin-top: calc(-1 * var(--padding));
 }
 
 * {
@@ -36,7 +40,7 @@ body {
 header {
     background: var(--accent);
     color: var(--base);
-    padding: 24px 16px;
+    padding: var(--padding);
     text-align: center;
 }
 
@@ -53,7 +57,7 @@ header p {
 
 nav {
     background: var(--mantle);
-    padding: 12px 16px;
+    padding: var(--padding);
     position: sticky;
     top: 0;
 }
@@ -65,7 +69,7 @@ nav ul {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 12px;
+    gap: var(--gap);
 }
 
 nav a {
@@ -73,8 +77,8 @@ nav a {
     text-decoration: none;
     font-weight: 600;
     font-size: 1rem;
-    padding: 6px 10px;
-    border-radius: 6px;
+    padding: var(--padding);
+    border-radius: var(--border-radius);
 }
 
 nav a:hover {
@@ -84,13 +88,13 @@ nav a:hover {
 
 main {
     flex: 1;
-    padding: 24px 16px;
+    padding: var(--padding) var(--padding) 0;
 }
 
 .container {
     max-width: 1100px;
     margin: 0 auto;
-    gap: 20px;
+    gap: var(--gap);
 }
 
 .profile-layout {
@@ -101,8 +105,8 @@ main {
 
 .infobox {
     background: var(--surface);
-    padding: 12px 16px;
-    border-radius: 6px;
+    padding: var(--padding);
+    border-radius: var(--border-radius);
     width: 320px;
     float: right; 
     margin-left: 18px;
@@ -112,13 +116,13 @@ main {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 4px 0 8px 0;
+    padding: var(--padding);
 }
 
 .profile-pic {
     width: 288px;
     height: auto;
-    border-radius: 6px;
+    border-radius: var(--border-radius);
 }
 
 .infobox-image p {
@@ -137,8 +141,8 @@ main {
 
 .infobox-row {
     display: flex;
-    gap: 6px;
-    padding: 4px 2px;
+    gap: var(--gap);
+    padding: var(--padding);
     align-items: center;
     border-bottom: 1px solid var(--muted);
 }
@@ -172,8 +176,8 @@ main {
 
 .content {
     background: var(--mantle);
-    border-radius: 8px;
-    padding: 16px;
+    border-radius: var(--border-radius);
+    padding: var(--padding);
 }
 
 .content h1 {
@@ -191,8 +195,8 @@ main {
     margin: 0.5em 0;
 }
 
-.content h4 {
-    color: var(--accent);
+.content-heading {
+    margin-top: var(--content-heading-margin-top);
 }
 
 .content p {
@@ -207,7 +211,7 @@ main {
 .quote-row .centered {
     display: inline-block;
     margin: 0 0 0.8em 0;
-    padding: 6px 10px;
+    padding: var(--padding);
     color: var(--muted);
 }
 
@@ -220,11 +224,11 @@ main {
 .content li {
     background: var(--surface);
     margin-bottom: 6px;
-    padding: 8px 12px;
-    border-radius: 4px;
+    padding: var(--padding);
+    border-radius: var(--border-radius);
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: var(--gap);
     flex-wrap: wrap;
 }
 
@@ -267,8 +271,8 @@ footer {
     background: var(--crust);
     color: var(--muted);
     text-align: center;
-    padding: 16px;
-    margin-top: 24px;
+    padding: var(--padding);
+    margin-top: var(--padding);
 }
 
 footer p {
@@ -298,8 +302,8 @@ footer a:hover {
 .popup-content {
   background: var(--mantle);
   color: var(--text);
-  padding: 16px;
-  border-radius: 8px;
+  padding: var(--padding);
+  border-radius: var(--border-radius);
   max-width: 600px;
   width: 90%;
   border: 1px solid var(--surface);
@@ -347,7 +351,7 @@ footer a:hover {
 
     nav ul {
         flex-direction: column;
-        gap: 8px;
+        gap: var(--gap);
     }
 
     nav a {
