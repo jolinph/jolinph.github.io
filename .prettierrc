@@ -1,8 +1,4 @@
 {
-  "printWidth": 140,
-  "tabWidth": 2,
-  "useTabs": false,
-  "singleQuote": false,
-  "trailingComma": "none",
-  "htmlWhitespaceSensitivity": "css"
+  "printWidth": 999999,
+  "tabWidth": 2
 }
