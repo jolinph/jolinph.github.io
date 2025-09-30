@@ -1,0 +1,66 @@
+.profile-layout {
+  display: block;
+  overflow: auto;
+}
+
+.profile-layout,
+.profile-layout * {
+  text-align: left;
+}
+
+.infobox {
+  background: var(--surface0);
+  padding: 16px;
+  border-radius: 6px;
+  width: 325px;
+  float: right;
+  margin-left: 18px;
+}
+
+.infobox-image {
+  padding: 4px 0 4px 0;
+}
+
+.profile-pic {
+  width: 288px;
+  border-radius: 6px;
+}
+
+.infobox-row {
+  display: flex;
+  border-top: 1px solid var(--subtext0);
+}
+
+.infobox-row-last {
+  border-bottom: 1px solid var(--subtext0);
+}
+
+.infobox-key {
+  width: 50%;
+  font-weight: 600;
+  font-size: 0.95rem;
+  border-right: 1px solid var(--subtext0);
+}
+
+.infobox-value {
+  width: 50%;
+  color: var(--text);
+  font-size: 0.95rem;
+}
+
+.infobox-row.wide-value .infobox-key {
+  width: 30%;
+}
+
+.infobox-row.wide-value .infobox-value {
+  width: 70%;
+}
+
+.flag {
+  height: 15px;
+  width: 30px;
+}
+
+.infobox-sub {
+  color: var(--mauve);
+}
