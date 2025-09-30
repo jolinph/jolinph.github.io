@@ -307,61 +307,6 @@ footer a:hover {
   color: var(--accent-2);
 }
 
-.popup-overlay {
-  position: fixed;
-  inset: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: rgba(0, 0, 0, 0.7);
-  z-index: 1000;
-}
-
-.popup-content {
-  background: var(--mantle);
-  color: var(--text);
-  padding: var(--padding);
-  border-radius: var(--border-radius);
-  max-width: 600px;
-  width: 90%;
-  border: 1px solid var(--surface);
-  position: relative;
-}
-
-.close-btn {
-  position: absolute;
-  top: -3px;
-  right: 8px;
-  font-size: 20px;
-  cursor: pointer;
-  color: var(--text);
-}
-
-.close-btn:hover {
-  color: var(--danger);
-}
-
-.popup-content h1 {
-  color: var(--accent);
-  margin: 0 0 0.4em;
-  font-size: 1.6rem;
-}
-
-.popup-content p {
-  margin: 0 0 0.1 0;
-  line-height: 1.5;
-}
-
-.popup-content a {
-  color: var(--accent);
-  text-decoration: none;
-}
-
-.popup-content a:hover {
-  color: var(--accent-2);
-  text-decoration: underline;
-}
-
 @media (max-width: 768px) {
   header h1 {
     font-size: 2rem;
@@ -399,4 +344,5 @@ footer a:hover {
     margin-right: 0;
     text-align: center;
   }
+
 }
