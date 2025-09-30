@@ -1,292 +1,310 @@
 :root {
-    --base: #1e1e2e;
-    --mantle: #181825;
-    --crust: #11111b;
-    --text: #cdd6f4;
-    --muted: #a6adc8;
-    --surface: #313244;
-    --surface-hover: #45475a;
-    --accent: #cba6f7;
-    --accent-2: #b4befe;
-    --danger: #f38ba8;
-    --padding: 16px;
-    --border-radius: 6px;
-    --gap: 8px;
-    --content-heading-margin-top: calc(-1 * var(--padding));
+  --base: #1e1e2e;
+  --mantle: #181825;
+  --crust: #11111b;
+  --text: #cdd6f4;
+  --muted: #a6adc8;
+  --surface: #313244;
+  --surface-hover: #45475a;
+  --accent: #cba6f7;
+  --accent-2: #b4befe;
+  --danger: #f38ba8;
+  --padding: 16px;
+  --border-radius: 6px;
+  --gap: 8px;
+  --content-heading-margin-top: calc(-1 * var(--padding));
 }
 
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 html {
-    height: 100%;
-    overflow: hidden;
+  height: 100%;
+  overflow: hidden;
 }
 
 body {
-    font-family: Inter, system-ui, sans-serif;
-    line-height: 1.6;
-    margin: 0;
-    height: 100%;
-    overflow: auto;
-    overscroll-behavior: none;
-    display: flex;
-    flex-direction: column;
-    background: var(--base);
-    color: var(--text);
+  font-family: Inter, system-ui, sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  height: 100%;
+  overflow: auto;
+  overscroll-behavior: none;
+  display: flex;
+  flex-direction: column;
+  background: var(--base);
+  color: var(--text);
 }
 
 header {
-    background: var(--accent);
-    color: var(--base);
-    padding: var(--padding);
-    text-align: center;
+  background: var(--accent);
+  color: var(--base);
+  padding: var(--padding);
+  text-align: center;
 }
 
 header h1 {
-    margin: 0;
-    font-size: 2.6rem;
-    font-weight: 700;
+  margin: 0;
+  font-size: 2.6rem;
+  font-weight: 700;
 }
 
 header p {
-    margin: 0.4em 0 0;
-    font-size: 1.05rem;
+  margin: 0.4em 0 0;
+  font-size: 1.05rem;
 }
 
 nav {
-    background: var(--mantle);
-    padding: var(--padding);
-    position: sticky;
-    top: 0;
+  background: var(--mantle);
+  padding: var(--padding);
+  position: sticky;
+  top: 0;
 }
 
 nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: var(--gap);
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: var(--gap);
 }
 
 nav a {
-    color: var(--accent);
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 1rem;
-    padding: var(--padding);
-    border-radius: var(--border-radius);
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  padding: var(--padding);
+  border-radius: var(--border-radius);
 }
 
 nav a:hover {
-    color: var(--accent-2);
-    background: var(--surface);
+  color: var(--accent-2);
+  background: var(--surface);
 }
 
 main {
-    flex: 1;
-    padding: var(--padding) var(--padding) 0;
+  flex: 1;
+  padding: var(--padding) var(--padding) 0;
 }
 
 .container {
-    max-width: 1100px;
-    margin: 0 auto;
-    gap: var(--gap);
+  max-width: 1100px;
+  margin: 0 auto;
+  gap: var(--gap);
 }
 
 .profile-layout {
-    display: block;
-    
-    overflow: auto;
+  display: block;
+
+  overflow: auto;
 }
 
 .infobox {
-    background: var(--surface);
-    padding: 12px 16px;
-    border-radius: 6px;
-    width: 320px;
-    float: right; 
-    margin-left: 18px;
+  background: var(--surface);
+  padding: 12px 16px;
+  border-radius: 6px;
+  width: 325px;
+  float: right;
+  margin-left: 18px;
 }
 
 .infobox-image {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 4px 0 8px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 4px 0 8px 0;
 }
 
 .profile-pic {
-    width: 288px;
-    height: auto;
-    border-radius: 6px;
+  width: 288px;
+  height: auto;
+  border-radius: 6px;
 }
 
 .infobox-image p {
-    text-align: center;
-    font-size: 0.9rem;
-    color: var(--muted);
-    margin: 4px 0;
+  text-align: center;
+  font-size: 0.9rem;
+  color: var(--muted);
+  margin: 4px 0;
 }
 
 .infobox-title {
-    margin: 6px 0;
-    font-size: 1rem;
-    color: var(--accent-2);
-    text-align: center;
+  margin: 6px 0;
+  font-size: 1rem;
+  color: var(--accent-2);
+  text-align: center;
 }
 
 .infobox-row {
-    display: flex;
-    gap: 6px;
-    padding: 4px 2px;
-    align-items: center;
-    border-bottom: 1px solid var(--muted);
+  display: flex;
+  gap: 6px;
+  padding: 4px 2px;
+  align-items: center;
+  border-bottom: 1px solid var(--muted);
 }
 
 .infobox-key {
-    width: 40%;
-    color: var(--muted);
-    font-weight: 600;
-    font-size: 0.95rem;
-    text-align: center;
-    border-right: 1px solid var(--muted);
+  width: 50%;
+  color: var(--muted);
+  font-weight: 600;
+  font-size: 0.95rem;
+  border-right: 1px solid var(--muted);
+  white-space: nowrap;
+  align-self: stretch;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .infobox-value {
-    width: 60%;
-    color: var(--text);
-    font-size: 0.95rem;
+  width: 50%;
+  color: var(--text);
+  font-size: 0.95rem;
+  text-align: center;
+}
+
+.infobox .infobox-row:nth-child(3) .infobox-key {
+  width: 30%;
+}
+
+.infobox .infobox-row:nth-child(3) .infobox-value {
+  width: 70%;
+  text-align: left;
 }
 
 .flag {
-    height: 14px;
-    margin-right: 8px;
+  height: 15px;
+  width: 30px;
+  margin-right: 8px;
+  object-fit: cover;
 }
 
 .infobox-sub {
-    margin-top: 8px;
-    margin-bottom: 4px;
-    color: var(--accent);
-    font-size: 0.95rem;
+  margin-top: 8px;
+  margin-bottom: 4px;
+  color: var(--accent);
+  font-size: 0.95rem;
+  text-align: center;
 }
 
 .content {
-    background: var(--mantle);
-    border-radius: var(--border-radius);
-    padding: var(--padding);
+  background: var(--mantle);
+  border-radius: var(--border-radius);
+  padding: var(--padding);
 }
 
 .content h1 {
-    color: var(--accent);
-    font-size: 1.9rem;
-    margin-bottom: 10px;
-    text-align: center;
-    border-bottom: 2px solid var(--accent);
-    padding-bottom: 0.4em;
+  color: var(--accent);
+  font-size: 1.9rem;
+  margin-bottom: 10px;
+  text-align: center;
+  border-bottom: 2px solid var(--accent);
+  padding-bottom: 0.4em;
 }
 
 .content h2 {
-    color: var(--accent);
-    font-size: 1.25rem;
-    margin: 0.5em 0;
+  color: var(--accent);
+  font-size: 1.25rem;
+  margin: 0.5em 0;
 }
 
 .content-heading {
-    margin-top: var(--content-heading-margin-top);
+  margin-top: var(--content-heading-margin-top);
 }
 
 .content p {
-    margin: 0 0 0.8em 0;
+  margin: 0 0 0.8em 0;
 }
 
 .quote-row {
-    margin-right: 338px; 
-    text-align: center;
+  margin-right: 368px;
+  text-align: center;
 }
 
 .quote-row .centered {
-    display: inline-block;
-    margin: 0 0 0.8em 0;
-    padding: var(--padding);
-    color: var(--muted);
+  display: inline-block;
+  margin: 0 0 0.8em 0;
+  padding: var(--padding);
+  color: var(--muted);
 }
 
 .content ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 .content li {
-    background: var(--surface);
-    margin-bottom: 6px;
-    padding: var(--padding);
-    border-radius: var(--border-radius);
-    display: flex;
-    align-items: center;
-    gap: var(--gap);
-    flex-wrap: wrap;
+  background: var(--surface);
+  margin-bottom: 6px;
+  padding: var(--padding);
+  border-radius: var(--border-radius);
+  display: flex;
+  align-items: center;
+  gap: var(--gap);
+  flex-wrap: wrap;
 }
 
 .content li:hover {
-    background: var(--surface-hover);
+  background: var(--surface-hover);
 }
 
 
 .plain-list {
-    list-style: disc outside;
-    padding-left: 1rem;
-    margin: 0 0 1em 0;
+  list-style: disc outside;
+  padding-left: 1rem;
+  margin: 0 0 1em 0;
 }
 
 .plain-list li {
-    background: transparent;
-    margin: 0 0 0.3em 0;
-    padding: 0;
-    border-radius: 0;
-    display: list-item;
-    align-items: initial;
-    gap: 0;
+  background: transparent;
+  margin: 0 0 0.3em 0;
+  padding: 0;
+  border-radius: 0;
+  display: list-item;
+  align-items: initial;
+  gap: 0;
 }
 
 .plain-list li:hover {
-    background: transparent;
+  background: transparent;
 }
 
 .content a {
-    color: var(--accent-2);
-    text-decoration: none;
-    font-weight: 500;
+  color: var(--accent-2);
+  text-decoration: none;
+  font-weight: 500;
 }
 
 .content a:hover {
-    color: var(--accent);
+  color: var(--accent);
 }
 
 footer {
-    background: var(--crust);
-    color: var(--muted);
-    text-align: center;
-    padding: var(--padding);
-    margin-top: var(--padding);
+  background: var(--crust);
+  color: var(--muted);
+  text-align: center;
+  padding: var(--padding);
+  margin-top: var(--padding);
 }
 
 footer p {
-    margin: 0;
-    font-size: 0.9rem;
+  margin: 0;
+  font-size: 0.9rem;
 }
 
 footer a {
-    color: var(--accent);
-    text-decoration: none;
+  color: var(--accent);
+  text-decoration: none;
 }
 
 footer a:hover {
-    color: var(--accent-2);
+  color: var(--accent-2);
 }
 
 .popup-overlay {
@@ -345,41 +363,40 @@ footer a:hover {
 }
 
 @media (max-width: 768px) {
-    header h1 {
-        font-size: 2rem;
-    }
+  header h1 {
+    font-size: 2rem;
+  }
 
-    nav ul {
-        flex-direction: column;
-        gap: var(--gap);
-    }
+  nav ul {
+    flex-direction: column;
+    gap: var(--gap);
+  }
 
-    nav a {
-        display: block;
-        text-align: center;
-    }
+  nav a {
+    display: block;
+    text-align: center;
+  }
 
-    .content {
-        padding: 16px;
-    }
+  .content {
+    padding: 16px;
+  }
 
-    .content h1 {
-        font-size: 1.4rem;
-    }
+  .content h1 {
+    font-size: 1.4rem;
+  }
 
-    .content h2 {
-        font-size: 1rem;
-    }
+  .content h2 {
+    font-size: 1rem;
+  }
 
-    .infobox {
-        width: 100%;
-        float: none; 
-        margin-left: 0;
-    }
+  .infobox {
+    width: 100%;
+    float: none;
+    margin-left: 0;
+  }
 
-    .quote-row {
-        margin-right: 0;
-        text-align: center;
-    }
+  .quote-row {
+    margin-right: 0;
+    text-align: center;
+  }
 }
-
