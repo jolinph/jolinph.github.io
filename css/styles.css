@@ -169,26 +169,6 @@ main {
   background: var(--surface1);
 }
 
-.plain-list {
-  list-style: disc outside;
-  padding-left: 1rem;
-  margin: 0 0 1em 0;
-}
-
-.plain-list li {
-  background: transparent;
-  margin: 0 0 0.3em 0;
-  padding: 0;
-  border-radius: 0;
-  display: list-item;
-  align-items: initial;
-  gap: 0;
-}
-
-.plain-list li:hover {
-  background: transparent;
-}
-
 .container li {
   color: var(--lavender);
   text-decoration: none;

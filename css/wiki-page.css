@@ -1,10 +1,9 @@
-.profile-layout {
+.wiki-layout {
   display: block;
   overflow: auto;
 }
 
-.profile-layout,
-.profile-layout * {
+.wiki-layout * {
   text-align: left;
 }
 
@@ -17,11 +16,7 @@
   margin-left: 18px;
 }
 
-.infobox-image {
-  padding: 4px 0 4px 0;
-}
-
-.profile-pic {
+.infobox img {
   width: 288px;
   border-radius: 6px;
 }
@@ -29,6 +24,7 @@
 .infobox-row {
   display: flex;
   border-top: 1px solid var(--subtext0);
+  align-items: center;
 }
 
 .infobox-row-last {
@@ -40,6 +36,10 @@
   font-weight: 600;
   font-size: 0.95rem;
   border-right: 1px solid var(--subtext0);
+  align-self: stretch;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .infobox-value {
@@ -54,11 +54,13 @@
 
 .infobox-row.wide-value .infobox-value {
   width: 70%;
+  text-align: left;
 }
 
 .flag {
-  height: 15px;
-  width: 30px;
+  height: 15px !important;
+  width: 30px !important;
+  border-radius: 0 !important;
 }
 
 .infobox-sub {
