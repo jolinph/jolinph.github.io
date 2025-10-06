@@ -6,5 +6,5 @@ Offical site of the Jolinese government
 
 - ~~Update blurb of the homepage~~
 - ~~Add theme changer~~
-- Hamburger menu to open/close nav bar (mobile only)
+- ~~Hamburger menu to open/close nav bar (mobile only)~~
 - Add repeating pattern background
