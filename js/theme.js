@@ -1,70 +1,56 @@
 (function () {
   const THEME_KEY = "site-theme";
-  const ORDER = ["mocha", "macchiato", "frappe", "latte"];
+  const THEMES = ["mocha", "macchiato", "frappe", "latte"];
 
-  function applyTheme(theme) {
-    const root = document.documentElement;
-    if (theme && theme !== "mocha") {
-      root.setAttribute("data-theme", theme);
+  const applyTheme = (theme) => {
+    if (theme === "mocha") {
+      document.documentElement.removeAttribute("data-theme");
     } else {
-      root.removeAttribute("data-theme");
+      document.documentElement.setAttribute("data-theme", theme);
     }
-  }
+  };
 
-  function getSavedTheme() {
+  const getCurrentTheme = () => {
     try {
       return localStorage.getItem(THEME_KEY) || "mocha";
-    } catch (_) {
+    } catch (error) {
       return "mocha";
     }
-  }
+  };
 
-  function saveTheme(theme) {
+  const saveTheme = (theme) => {
     try {
       localStorage.setItem(THEME_KEY, theme);
-    } catch (_) {}
-  }
+    } catch (error) {}
+  };
 
-  function nextTheme(current) {
-    const idx = ORDER.indexOf(current);
-    return ORDER[(idx + 1) % ORDER.length];
-  }
+  const getNextTheme = (currentTheme) => {
+    const currentIndex = THEMES.indexOf(currentTheme);
+    const nextIndex = (currentIndex + 1) % THEMES.length;
+    return THEMES[nextIndex];
+  };
 
-  function labelFor(theme) {
-    const map = {
-      mocha: "Mocha",
-      macchiato: "Macchiato",
-      frappe: "Frappé",
-      latte: "Latte",
-    };
-    return map[theme] || theme;
-  }
+  const themeButton = document.createElement("button");
+  themeButton.className = "theme-toggle";
+  themeButton.type = "button";
+  themeButton.title = "Change theme";
+  themeButton.setAttribute("aria-label", "Change theme");
+  themeButton.textContent = "Theme";
 
-  function createButton(initialTheme) {
-    const btn = document.createElement("button");
-    btn.className = "theme-toggle";
-    btn.type = "button";
-    btn.title = "Change theme";
-    btn.setAttribute("aria-label", "Change theme");
-    btn.textContent = labelFor(initialTheme);
-    btn.addEventListener("click", () => {
-      const current = getSavedTheme();
-      const next = nextTheme(current);
-      applyTheme(next);
-      saveTheme(next);
-      btn.textContent = labelFor(next);
-    });
-    return btn;
-  }
+  themeButton.addEventListener("click", () => {
+    const currentTheme = getCurrentTheme();
+    const nextTheme = getNextTheme(currentTheme);
+    applyTheme(nextTheme);
+    saveTheme(nextTheme);
+  });
 
-  const initial = getSavedTheme();
-  applyTheme(initial);
+  applyTheme(getCurrentTheme());
 
   if (document.readyState === "loading") {
     document.addEventListener("DOMContentLoaded", () => {
-      document.body.appendChild(createButton(getSavedTheme()));
+      document.body.appendChild(themeButton);
     });
   } else {
-    document.body.appendChild(createButton(getSavedTheme()));
+    document.body.appendChild(themeButton);
   }
 })();

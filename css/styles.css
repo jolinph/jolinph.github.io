@@ -279,23 +279,25 @@ footer p {
 /* Theme toggle button */
 .theme-toggle {
   position: fixed;
-  top: 12px;
-  right: 12px;
+  top: 16px;
+  right: 16px;
   z-index: 1000;
-  padding: 8px 12px;
-  border-radius: var(--border-radius);
-  border: 1px solid var(--overlay0);
-  background: var(--surface0);
-  color: var(--text);
+  padding: 6px 12px;
+  border-radius: 6px;
+  border: 1.5px solid var(--mauve);
+  background: var(--base);
+  color: var(--mauve);
   cursor: pointer;
   font-weight: 600;
+  font-size: 0.85rem;
 }
 
 .theme-toggle:hover {
-  background: var(--surface1);
+  background: var(--surface0);
+  color: var(--lavender);
+  border-color: var(--lavender);
 }
 
 .theme-toggle:focus {
-  outline: 2px solid var(--mauve);
-  outline-offset: 2px;
+  outline: none;
 }
