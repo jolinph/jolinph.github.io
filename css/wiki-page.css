@@ -13,6 +13,7 @@
   width: 325px;
   float: right;
   margin-left: 18px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.45);
 }
 
 .infobox img {

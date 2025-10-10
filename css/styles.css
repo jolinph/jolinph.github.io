@@ -156,7 +156,6 @@ a {
 
 a:hover {
   color: var(--lavender);
-  text-decoration: underline;
 }
 
 header {
@@ -179,7 +178,6 @@ header p {
 
 nav {
   background: var(--mantle);
-  padding: var(--padding);
   position: sticky;
   top: 0;
   z-index: 100;
@@ -199,12 +197,16 @@ nav a {
   font-weight: 600;
   font-size: 1rem;
   padding: var(--padding);
-  border-radius: var(--border-radius);
+  border-radius: 0;
+  transition: color 220ms ease-in-out, transform 220ms ease-in-out;
+  display: inline-block;
+  will-change: transform, color;
+  transform: translateY(0);
 }
 
 nav a:hover {
   color: var(--lavender);
-  background: var(--surface0);
+  transform: translateY(-3px);
 }
 
 /* Hamburger menu styles */
@@ -276,6 +278,7 @@ nav a:hover {
     text-align: center;
   }
 }
+
 main {
   flex: 1;
   padding: var(--padding) var(--padding) 0;
@@ -289,6 +292,7 @@ main {
   background: var(--mantle);
   border-radius: var(--border-radius);
   padding: var(--padding);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.45);
 }
 
 .container h1 {
@@ -326,7 +330,6 @@ main {
   gap: var(--gap);
   flex-wrap: wrap;
   color: var(--lavender);
-  text-decoration: none;
   font-weight: bold;
 }
 
@@ -347,20 +350,20 @@ footer p {
   font-size: 0.9rem;
 }
 
-/* Theme toggle button */
 .theme-toggle {
-  position: fixed;
-  top: 16px;
-  right: 16px;
-  z-index: 1000;
+  position: fixed !important;
+  top: 16px !important;
+  right: 16px !important;
+  z-index: 2147483647;
   padding: 6px 12px;
   border-radius: 6px;
-  border: 1.5px solid var(--mauve);
+  border: 2px solid var(--mauve);
   background: var(--base);
   color: var(--mauve);
   cursor: pointer;
   font-weight: 600;
   font-size: 0.85rem;
+  transform: none !important;
 }
 
 .theme-toggle:hover {

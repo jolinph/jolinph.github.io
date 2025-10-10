@@ -3,8 +3,8 @@
     size: 60,
     spacing: 30,
     speed: 25,
-    fill: "rgba(203, 166, 247, 0.1)",
-    stroke: "rgba(203, 166, 247, 0.3)",
+    fill: "rgba(203, 166, 247, 0.05)",
+    stroke: "rgba(203, 166, 247, 0.15)",
     width: 2,
   };
 
