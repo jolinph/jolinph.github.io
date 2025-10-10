@@ -298,10 +298,10 @@ main {
 .container h1 {
   color: var(--mauve);
   font-size: 1.9rem;
-  margin-bottom: 10px;
+  margin: -8px 0 var(--padding) 0;
   text-align: center;
   border-bottom: 2px solid var(--mauve);
-  padding-bottom: 0.4em;
+  padding-bottom: 0;
 }
 
 .container h2 {
@@ -311,7 +311,7 @@ main {
 }
 
 .container p {
-  margin: 0 0 0.8em 0;
+  margin: 0 0 var(--padding) 0;
 }
 
 .container ul {
@@ -374,4 +374,52 @@ footer p {
 
 .theme-toggle:focus {
   outline: none;
+}
+
+/* Card grid layout */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  row-gap: var(--padding);
+  column-gap: var(--padding);
+  margin: 0;
+}
+
+.card-grid li {
+  background: var(--surface0);
+  padding: var(--padding);
+  border-radius: var(--border-radius);
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: flex-start;
+  gap: var(--padding);
+  color: var(--text);
+  font-weight: normal;
+  text-align: center;
+  min-height: 180px;
+  margin-bottom: 0;
+}
+
+.card-grid li:hover {
+  background: var(--surface1);
+}
+
+.card-grid li a {
+  font-weight: 600;
+  font-size: 1.1rem;
+  border-bottom: 2px solid var(--mauve);
+  padding-bottom: 8px;
+  display: block;
+  width: 100%;
+}
+
+.card-grid li p {
+  margin: 0;
+}
+
+@media (max-width: 600px) {
+  .card-grid {
+    grid-template-columns: 1fr;
+  }
 }
