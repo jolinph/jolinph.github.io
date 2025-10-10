@@ -3,9 +3,32 @@
     size: 60,
     spacing: 30,
     speed: 25,
-    fill: "rgba(203, 166, 247, 0.05)",
-    stroke: "rgba(203, 166, 247, 0.15)",
     width: 2,
+    fill: "",
+    stroke: "",
+  };
+
+  const getThemeColors = () => {
+    const computedStyle = getComputedStyle(document.documentElement);
+    const mauveColor = computedStyle.getPropertyValue("--mauve").trim();
+
+    const hexToRgba = (hex, alpha) => {
+      const r = parseInt(hex.slice(1, 3), 16);
+      const g = parseInt(hex.slice(3, 5), 16);
+      const b = parseInt(hex.slice(5, 7), 16);
+      return `rgba(${r}, ${g}, ${b}, ${alpha})`;
+    };
+
+    return {
+      fill: hexToRgba(mauveColor, 0.05),
+      stroke: hexToRgba(mauveColor, 0.15),
+    };
+  };
+
+  const updateColors = () => {
+    const colors = getThemeColors();
+    cfg.fill = colors.fill;
+    cfg.stroke = colors.stroke;
   };
 
   const canvas = document.createElement("canvas");
@@ -68,11 +91,21 @@
 
   const start = () => {
     resize();
+    updateColors();
     lastTime = null;
     animId = requestAnimationFrame(animate);
   };
 
   const stop = () => animId && cancelAnimationFrame(animId);
+
+  const observer = new MutationObserver(() => {
+    updateColors();
+  });
+
+  observer.observe(document.documentElement, {
+    attributes: true,
+    attributeFilter: ["data-theme"],
+  });
 
   addEventListener("resize", resize);
   document.readyState === "loading" ? addEventListener("DOMContentLoaded", start) : start();
@@ -86,6 +119,7 @@
       if (f) cfg.fill = f;
       if (s) cfg.stroke = s;
     },
+    updateColors,
     stop,
     start,
   };
