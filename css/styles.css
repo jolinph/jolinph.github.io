@@ -198,7 +198,9 @@ nav a {
   font-size: 1rem;
   padding: var(--padding);
   border-radius: 0;
-  transition: color 220ms ease-in-out, transform 220ms ease-in-out;
+  transition:
+    color 220ms ease-in-out,
+    transform 220ms ease-in-out;
   display: inline-block;
   will-change: transform, color;
   transform: translateY(0);
@@ -257,7 +259,9 @@ nav a:hover {
     background: var(--mantle);
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.3s ease, padding 0.3s ease;
+    transition:
+      max-height 0.3s ease,
+      padding 0.3s ease;
     padding: 0 var(--padding);
     border-bottom: 2px solid transparent;
   }
